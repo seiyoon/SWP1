@@ -7,14 +7,18 @@ def application(environ, start_response):
         b = d.get('b', [''])[0]
         sum = -1
         product = -1
-        if '' not in [a, b]:
+	string = "Good^^"
+	try:
                 a, b = int(a), int(b)
                 sum = [a + b]
                 product = [a * b]
+	except ValueError:
+		string = "error!"
 
         response_body = html % {
                 'sum' : sum,
                 'product' : product,
+		'string' : string,
         }
         start_response('200 OK', [
                 ('Content-Type', 'text/html'),

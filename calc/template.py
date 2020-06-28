@@ -10,6 +10,7 @@ html = b"""
 	    </p>
 	</form>
 	<p>
+	    MESSAGE: %(string)s</br>
 	    SUM: %(sum)s</br>
 	    PRODUCT: %(product)s</br>
 	</p>
